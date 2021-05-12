@@ -96,8 +96,9 @@ sleep 2
 echo "> Generated Secret: ${SECRET}"
 echo "> Mtg listening at port: ${PORT}"
 echo ">  ..."
-#SADDR=$(wget -qO- -4 https://www.cloudflare.com/cdn-cgi/trace | grep 'ip=' | cut -d= -f2)
-echo "> Setup mtproxy in telegram with following URL: "
-journalctl -u mtg --since today | grep tme_url
+SADDR="$(wget -qO- -t1 -T2 -4 https://api.ip.sb/ip)"
+MTG_LINK="https://t.me/proxy?server=${SADDR}&port=${PORT}&secret=${SECRET}"
+echo "> Setup mtproxy in telegram with following URL:${MTG_LINK}"
+#journalctl -u mtg --since today | grep tme_url
 echo ""
 echo "> Bye."
