@@ -7,7 +7,7 @@ Update: mtg 1.0+ support MTProto2.0, this script will choose the FakeTLS mode to
 
 # Install
 ```
-bash <(wget -qO- https://git.io/mtg.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/lynkco01/mtg-dist/master/install.sh)
 ```
 
 # Uninstall
